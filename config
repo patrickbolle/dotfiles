@@ -2,7 +2,7 @@
 
 set $mod Mod4
 # font for window titles. ISO 10646 = Unicode
-font pango: System San Francisco Display 10
+font pango: Noto Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -23,7 +23,7 @@ bindsym $mod+m exec xrandr --output VGA1 --mode 1680x1050 && exec xrandr --outpu
 bindsym $mod+n exec xrandr --output LVDS1 --auto
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -100,12 +100,14 @@ exec --no-startup-id nitrogen --restore
 
 #startup apps
 exec --no-startup-id conky
-exec –no-startup-id sleep 3 && xfce4-power-manager
+exec --no-startup-id sleep 5 && xfce4-power-manager
+exec --no-startup-id rescuetime
+exec --no-startup-id redshift -l 43.4025790:-80.3878430
 
 #program shortcuts
-bindsym $mod+i exec google-chrome
+bindsym $mod+i exec firefox
 bindsym $mod+o exec thunar
-bindsym $mod+p exec atom
+bindsym $mod+p exec subl
 bindsym $mod+u exec htop
 
 # reload the configuration file
