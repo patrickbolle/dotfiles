@@ -96,16 +96,16 @@ bindsym $mod+Shift+5 move container to workspace 5: off
 bindsym $mod+Shift+6 move container to workspace 6: misc
 
 #start nitrogen for wallpaper handling
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id feh --recursive --randomize --bg-fill ~/Pictures/surf/*
 
 #startup apps
-exec --no-startup-id conky
+#exec --no-startup-id conky
 exec --no-startup-id sleep 5 && xfce4-power-manager
 exec --no-startup-id rescuetime
 exec --no-startup-id redshift -l 43.4025790:-80.3878430
 
 #program shortcuts
-bindsym $mod+i exec firefox
+bindsym $mod+i exec google-chrome
 bindsym $mod+o exec thunar
 bindsym $mod+p exec subl
 bindsym $mod+u exec htop
@@ -169,8 +169,8 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #E26D5C
 
 # start rofi (a program launcher)
-# bindsym $mod+d exec rofi -show run -lines 6 -eh 2-opacity "15" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 14"
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 40 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+# bindsym $mod+d exec rofi -show run -lines 6 -eh 2-opacity "15" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Noto Mono 20"
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 40 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 20"
 
 
 #                       border              background         text                 indicator
@@ -182,6 +182,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # bar
 bar {
     position bottom
+font pango: Noto Mono 10
   	status_command i3blocks -c ~/.i3/i3blocks.conf
 	colors {
 		background $bg-color
